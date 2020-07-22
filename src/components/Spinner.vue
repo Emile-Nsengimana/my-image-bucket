@@ -36,7 +36,7 @@ export default {
       -1.8em -1.8em 0 0em rgba(21, 106, 104, 0.7);
   }
   12.5% {
-    box-shadow: 0em -2.6em 0em 0em #156a68b3,
+    box-shadow: 0em -2.6em 0em 0em #156a69b3,
       1.8em -1.8em 0 0em #156a68, 2.5em 0em 0 0em rgba(21, 106, 104, 0.2),
       1.75em 1.75em 0 0em rgba(21, 106, 104, 0.2),
       0em 2.5em 0 0em rgba(21, 106, 104, 0.2),

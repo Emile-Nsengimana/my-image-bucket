@@ -14,12 +14,11 @@ export default {
       queryString
     )}`;
   },
-  getImages: async (token) => {
-    const images = await axios.get(`${BASE_URL}/3/account/me/images`, {
-        headers: {
-            Authorization: `Bearer ${token}`
-        }
+  getImages: (token) => {
+    return axios.get(`${BASE_URL}/3/account/me/images`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
     });
-    console.log('\n\n\n', images.data);
   },
 };

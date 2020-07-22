@@ -1,8 +1,9 @@
 import imgurApi from "../../api/imgur";
 import qs from "qs";
+import { router } from '../../main';
 
 const state = {
-  token: null,
+  token: window.localStorage.getItem('access_token'),
 };
 
 const getters = {
@@ -13,14 +14,15 @@ const mutations = {
 };
 const actions = {
   redirectLogin: () => imgurApi.login(),
-  login: async(state, payload) => {
-    // console.log('payload', payload);
+  login: async ({ commit }, payload) => {
     const { access_token } = qs.parse(payload.replace("#", ""));
-    await imgurApi.getImages(access_token);
-    // console.log("payload >>>", access_token);
+    commit("setToken", access_token);
+    window.localStorage.setItem("access_token", access_token);
+    router.push('/');
   },
   logout: ({ commit }) => {
     commit("setToken", null);
+    window.localStorage.removeItem("access_token");
   },
 };
 

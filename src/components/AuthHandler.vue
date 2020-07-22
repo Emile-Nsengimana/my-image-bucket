@@ -8,8 +8,8 @@ import Spinner from "@/components/Spinner";
 export default {
   name: "AuthHandler",
   methods: mapActions(["login"]),
-  created(){
-    this.login(window.location.hash)
+  created() {
+    this.login(window.location.hash);
   },
   components: {
     Spinner
